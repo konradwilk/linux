@@ -507,9 +507,9 @@ static int skl_free(struct hdac_ext_bus *ebus)
 	return 0;
 }
 
-static int skl_find_mchine(struct skl *skl, void *driver_data)
+static int skl_find_machine(struct skl *skl, void *driver_data)
 {
-	struct sst_acpi_mach *mach = driver_data;
+	struct snd_soc_acpi_mach *mach = driver_data;
 	struct hdac_bus *bus = ebus_to_hbus(&skl->ebus);
 
 	if (IS_ENABLED(CONFIG_SND_SOC_RT700) ||
@@ -537,7 +537,7 @@ out:
 static int skl_machine_device_register(struct skl *skl)
 {
 	struct hdac_bus *bus = ebus_to_hbus(&skl->ebus);
-	struct sst_acpi_mach *mach = skl->mach;
+	struct snd_soc_acpi_mach *mach = skl->mach;
 	struct platform_device *pdev;
 	int ret;
 
@@ -915,7 +915,7 @@ nhlt_continue:
 
 	/* check if dsp is there */
 	if (bus->ppcap) {
-		err = skl_find_mchine(skl, (void *)pci_id->driver_data);
+		err = skl_find_machine(skl, (void *)pci_id->driver_data);
 		if (err < 0)
 			goto out_nhlt_free;
 
