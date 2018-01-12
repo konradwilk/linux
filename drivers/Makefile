@@ -188,3 +188,4 @@ obj-$(CONFIG_TEE)		+= tee/
 obj-$(CONFIG_MULTIPLEXER)	+= mux/
 obj-$(CONFIG_SDW)		+= sdw/
 obj-$(CONFIG_CWP) 		+= vhm/
+obj-$(CONFIG_CWP)		+= cwp/
