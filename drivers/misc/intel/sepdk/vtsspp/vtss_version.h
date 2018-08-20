@@ -1,0 +1,4 @@
+#define VTSS_VERSION_MAJOR    1
+#define VTSS_VERSION_MINOR    8
+#define VTSS_VERSION_REVISION 149
+#define VTSS_VERSION_STRING   "v1.8.149-564228 Intel(R) VTune(TM) Amplifier"
