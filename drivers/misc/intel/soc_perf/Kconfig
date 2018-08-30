@@ -1,0 +1,4 @@
+
+config INTEL_SOCPERF
+	tristate "SocPerf kernel driver from SocWatch"
+	default m
