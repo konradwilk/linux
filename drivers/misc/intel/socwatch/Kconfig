@@ -1,0 +1,27 @@
+config INTEL_SOCWATCH
+	tristate "SoC Watch kernel module"
+	default m
+
+config SOCWATCH_DO_ANDROID
+	int "Soc Watch Do Android"
+	depends on INTEL_SOCWATCH
+	default 0
+
+config SOCWATCH_DO_SOCPERF
+	int "Soc Watch Do SoC Perf"
+	depends on INTEL_SOCWATCH
+	depends on INTEL_SOCPERF
+	default 1 if INTEL_SOCPERF
+	default 0
+	help
+	  If INTEL_SOCPERF is enabled you can set to 1.
+
+config SOCWATCH_DO_PROFILING
+	int "Soc Watch Do Profiling"
+	depends on INTEL_SOCWATCH
+	default 0
+
+config SOCWATCH_DO_DEBUG
+	bool "Soc Watch Do Debug"
+	depends on INTEL_SOCWATCH
+	default n
